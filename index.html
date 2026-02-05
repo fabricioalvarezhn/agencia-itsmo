@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <link rel="stylesheet" href="style.css?v=1.0.2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Agencia Aduanera del Itsmo</title>
+    </head>
+
+    <script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelector(".slides");
+  const total = slides.children.length;
+  let index = 0;
+
+  function showSlide(i) {
+    slides.style.transform = `translateX(-${i * 100}%)`;
+  }
+
+  document.querySelector(".next").addEventListener("click", () => {
+    index = (index + 1) % total;
+    showSlide(index);
+  });
+
+  document.querySelector(".prev").addEventListener("click", () => {
+    index = (index - 1 + total) % total;
+    showSlide(index);
+  });
+
+  // autoplay
+  setInterval(() => {
+    index = (index + 1) % total;
+    showSlide(index);
+  }, 4000);
+});
+
+</script>
+
+
+<body>
+
+
+
+    <div class="layout">
+
+    
+        <!-- Header -->
+        <header class="header">
+
+
+        <div class="logo">
+        <span class="star s1">★</span>
+        <span class="star s2">★</span>
+        <span class="star s3">★</span>
+        <span class="star s4">★</span>
+        <span class="star s5">★</span>
+        </div>
+
+         <h1>Agentes Aduaneros del Itsmo</h1>
+
+        </header>
+
+
+
+        <!-- Barra de navegacion -->
+        <nav class="nav">
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Quienes Somos</a></li>
+                <li><a href="">Servicios</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <section class="content">
+
+            <!-- <div class="slider-image">
+                <img src="slider-1.jpeg" alt="Imagen slider 1" />
+            </div> -->
+
+
+            <div class="slider">
+                  <button class="nav-slider prev">&#10094;</button>
+            <div class="slides">
+                <img src="slider-1.jpeg" alt="">
+                <img src="slider-2.jpg" alt="">
+                <img src="slider-3.jpg" alt="">
+                <!-- <img src="slider-4.jpeg" alt=""> -->
+            </div>
+              <button class="nav-slider next">&#10095;</button>
+            </div>
+
+
+    
+           <!-- Servicios -->
+    <div class="services">
+
+        <header class="services-header">
+            <h2>Nuestros Servicios</h2>
+            <hr>
+        </header>
+
+        <div class="services-container">
+
+            <article class="service-item">
+                <img src="service-1.jpeg" alt="Servicio 1">
+                <h3>CARGA</h3>
+                <p>Carga consolidada desde china.</p>
+            </article>
+
+            <article class="service-item">
+                <img src="service-2.jpeg" alt="Servicio 2">
+                <h3>RESERVA TU ESPACIO</h3>
+                <p>Transporte FCL de china a Latinoamerica.</p>
+            </article>
+
+            <article class="service-item">
+                <img src="service-3.jpeg" alt="Servicio 3">
+                <h3>TE ASESORAMOS</h3>
+                <p>Exporta tus productos internacionalmente.</p>
+            </article>
+
+        </div>
+
+    </div>
+
+        </section>
+
+   
+
+        <!-- Pie de pagina -->
+        <footer class="footer">
+        ◎ ADUANAS: PUERTO CORTÉS, SAN PEDRO SULA, PALMEROLA, SAN LORENZO, TONCONTÍN
+        </footer>
+
+
+    </div>
+
+
+
+    
+</body>
+</html>
