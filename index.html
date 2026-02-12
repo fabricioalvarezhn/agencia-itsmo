@@ -7,7 +7,7 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
 
-    <link rel="stylesheet" href="style.css?v=1.0.2">
+    <link rel="stylesheet" href="style.css?v=1.0.4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -71,14 +71,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         <!-- Barra de navegacion -->
-        <nav class="nav">
-            <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Quienes Somos</a></li>
-                <li><a href="">Servicios</a></li>
-                <li><a href="">Contacto</a></li>
-            </ul>
-        </nav>
+  <nav class="nav">
+
+  <div class="nav-inner">
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="">Inicio</a></li>
+      <li><a href="">Quienes Somos</a></li>
+      <li><a href="">Servicios</a></li>
+      <li><a href="">Contacto</a></li>
+    </ul>
+  </div>
+  
+</nav>
+
 
         <!-- Contenido principal -->
         <section class="content">
@@ -144,6 +155,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     </div>
+
+
+    <div class="overlay" id="overlay"></div>
+
+
+
+<script>
+  
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+const overlay = document.getElementById("overlay");
+
+function toggleMenu() {
+  navMenu.classList.toggle("active");
+  hamburger.classList.toggle("active");
+  overlay.classList.toggle("active");
+  document.body.classList.toggle("menu-open");
+}
+
+hamburger.addEventListener("click", toggleMenu);
+overlay.addEventListener("click", toggleMenu);
+
+</script>
 
 
 
